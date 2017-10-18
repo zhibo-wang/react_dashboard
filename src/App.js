@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 import './App.css';
 
-import {Router, Route} from 'react-router';
+import {Router, Route, BrowserRouter, Switch, Redirect} from 'react-router-dom';
 import LoginForm from './Login';
+import Layout from './layout/Main';
 
 class App extends Component {
     render() {
         return (
-            <Router history={}>
+            <Router history={BrowserRouter}>
                 <Route path="/app/login" component={LoginForm}/>
+                <Route path="/app/dashboard" component={Layout}/>
             </Router>
         );
     }
